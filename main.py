@@ -57,10 +57,79 @@
 # print(f"Highest number is: {highest}")
 
 #Number 4
-n = int(input("Enter a number: "))
-total = 0
+# n = int(input("Enter a number: "))
+# total = 0
+#
+# for i in range(1, n + 1):
+#     total += i
+# print(f"The sum of numbers from 1 to {n} is: {total}")
 
-for i in range(1, n + 1):
-    total += i
-print(f"The sum of numbers from 1 to {n} is: {total}")
+#Number 5
+# Dec-Binary
+def decToBinary(dec):
+    binary = ""
+    if dec == 0:
+        return "0"
+    while dec > 0:
+        binary = str(dec % 2) + binary
+        dec //= 2
+    return binary
+
+
+# bi-dec, oct, dec, hex, dect
+def binaryToN(bin_or_oct_or_hex, base):
+    decimal = 0
+    power = 0
+    for digit in reversed(bin_or_oct_or_hex):
+        if base == 2:
+            decimal += int(digit) * (2 ** power)
+        elif base == 8:
+            decimal += int(digit) * (8 ** power)
+        elif base == 16:
+            decimal += int(digit, 16) * (16 ** power)
+        power += 1
+    return decimal
+
+
+# Dec-Oct
+def decToOctal(dec):
+    octal = ""
+    if dec == 0:
+        return "0"
+    while dec > 0:
+        octal = str(dec % 8) + octal
+        dec //= 8
+    return octal
+
+
+# Dec-Hex
+def decToHex(dec):
+    hexadecimal = ""
+    if dec == 0:
+        return "0"
+    while dec > 0:
+        remainder = dec % 16
+        if remainder < 10:
+            hexadecimal = str(remainder) + hexadecimal
+        else:
+            hexadecimal = chr(ord('A') + remainder - 10) + hexadecimal
+        dec //= 16
+    return hexadecimal
+
+
+
+def main():
+    decimal_input = int(input("Enter a decimal number: "))
+
+    binary_result = decToBinary(decimal_input)
+    octal_result = decToOctal(decimal_input)
+    hexadecimal_result = decToHex(decimal_input)
+
+    print(f"Decimal to Binary: {binary_result}")
+    print(f"Decimal to Octal: {octal_result}")
+    print(f"Decimal to Hexadecimal: {hexadecimal_result}")
+
+
+if __name__ == "__main__":
+    main()
 
