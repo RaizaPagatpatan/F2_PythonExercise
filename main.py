@@ -30,28 +30,39 @@
 
 #Number 3
 
-num = int(input("Please enter a number: "))
+# num = int(input("Please enter a number: "))
+#
+# count = 0
+# smallest = 9
+# highest = 0
+#
+#
+# if num == 0:
+#     count = 1
+#     smallest = 0
+#     highest = 0
+#
+# while num != 0:
+#     digit = num % 10
+#     count += 1
+#
+#     smallest = min(smallest, digit)
+#     highest = max(highest, digit)
+#
+#     num //= 10
+#
+#
+# print(f"Number of digits in the given number is: {count}")
+# print(f"Smallest number is: {smallest}")
+# print(f"Highest number is: {highest}")
 
-count = 0
-smallest = 9
-highest = 0
+#Number 4
+n = int(input("Enter a number: "))
 
+total = 0
 
-if num == 0:
-    count = 1
-    smallest = 0
-    highest = 0
+for i in range(1, n + 1):
+    total += i
 
-while num != 0:
-    digit = num % 10
-    count += 1
+print(f"The sum of numbers from 1 to {n} is: {total}")
 
-    smallest = min(smallest, digit)
-    highest = max(highest, digit)
-
-    num //= 10
-
-
-print(f"Number of digits in the given number is: {count}")
-print(f"Smallest number is: {smallest}")
-print(f"Highest number is: {highest}")
